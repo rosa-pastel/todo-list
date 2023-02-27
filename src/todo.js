@@ -77,8 +77,8 @@ export function Todo(
 
     const description = document.createElement("textarea");
     description.id = "description";
-    description.value = this.description;
     description.placeholder = "Describe task...";
+    description.value = this.description;
     description.addEventListener("change", () => {
       if (description.value != this.description)
         saveBtn.setAttribute("style", "background-color: red");
@@ -92,7 +92,7 @@ export function Todo(
     saveBtn.type = "button";
     saveBtn.textContent = "Save";
     saveBtn.addEventListener("click", () => {
-      this.changeDescription.bind(this, description);
+      this.changeDescription(description);
       saveBtn.setAttribute("style", "background-color: #081f2c");
     });
     form.appendChild(saveBtn);

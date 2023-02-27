@@ -35,10 +35,10 @@ export function User(nameArg) {
       const projectDiv = document.createElement("div");
       projectDiv.textContent = project.projectTitle;
       li.appendChild(projectDiv);
-      projectDiv.parentNode.addEventListener(
-        "click",
-        project.renderProject.bind(project)
-      );
+      projectDiv.parentNode.addEventListener("click", () => {
+        this.currentProject = project;
+        this.currentProject.renderProject();
+      });
 
       const deleteIcon = document.createElement("div");
       deleteIcon.textContent = "-";
