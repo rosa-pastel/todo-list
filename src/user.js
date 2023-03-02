@@ -37,7 +37,6 @@ export function getLocalUser() {
   if (!localStorage.getItem("user")) {
     const user = new User("cute kitten");
 
-    console.log(user);
     const fitness = user.addProject("Fitness");
     fitness.addTodo("do upper body");
     fitness.addTodo("drink protein shake");
